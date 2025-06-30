@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using portfolio.Data;
+using portfolio.Models;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +25,19 @@ builder.Services.AddCors(options =>
         });
 });
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.Migrate();
+    // Seed sample data if Projects table is empty
+    if (!dbContext.Projects.Any())
+    {
+        dbContext.Projects.AddRange(
+            new Projects { ID = 1, Title = "Portfolio Website", Description = "My personal portfolio site.", ImagePath = "/images/portfolio.png" }
+        ); 
+        dbContext.SaveChanges();
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
