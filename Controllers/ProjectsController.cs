@@ -44,6 +44,11 @@ namespace portfolio.Controllers
             product.Title = updatedProduct.Title;
             product.Description = updatedProduct.Description;
             product.ImagePath = updatedProduct.ImagePath;
+            product.ImageHint = updatedProduct.ImageHint;
+            product.LiveURL = updatedProduct.LiveURL;
+            product.SourceURL = updatedProduct.SourceURL;
+            product.Tags = updatedProduct.Tags ?? new List<string>(); // Ensure Tags is not null
+            product.Tags.AddRange(updatedProduct.Tags ?? new List<string>()); // Add new tags if any
             _context.SaveChanges();
 
             return NoContent();
