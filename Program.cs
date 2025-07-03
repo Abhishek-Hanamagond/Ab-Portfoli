@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Portfoli.Models;
 using portfolio.Data;
 using portfolio.Models;
 using System;
@@ -35,6 +36,13 @@ using (var scope = app.Services.CreateScope())
         dbContext.Projects.AddRange(
             new Projects { ID = 1, Title = "Portfolio Website", Description = "My personal portfolio site.", ImagePath = "/images/portfolio.png" }
         ); 
+        dbContext.SaveChanges();
+    }
+    if (!dbContext.CaseStudy.Any())
+    {
+        dbContext.CaseStudy.AddRange(
+            new CaseStudy { Id = 1, title = "Portfolio Website", problem = "My personal portfolio site.", imageUrl = "/images/portfolio.png", solution = "", outcome = "", imageHint = "", tags = ["a", "b"] }
+        );
         dbContext.SaveChanges();
     }
 }

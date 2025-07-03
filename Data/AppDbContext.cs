@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Portfoli.Models;
 using portfolio.Models;
 
 namespace portfolio.Data
@@ -9,5 +10,7 @@ namespace portfolio.Data
             : base(options) { }
 
         public DbSet<Projects> Projects { get; set; }
+
+        public DbSet<CaseStudy> CaseStudy { get; set; }
     }
 }
