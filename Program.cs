@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Portfoli.Models;
 using portfolio.Data;
 using portfolio.Models;
 using System;
