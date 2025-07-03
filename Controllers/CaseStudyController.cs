@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Portfoli.Models;
 using portfolio.Data;
 using portfolio.Models;
+
 
 // For more information on enabling Web API for empty CaseStudy, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

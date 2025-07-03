@@ -1,4 +1,4 @@
-﻿namespace Portfoli.Models
+﻿namespace portfolio.Models
 {
     public class CaseStudy
     {
