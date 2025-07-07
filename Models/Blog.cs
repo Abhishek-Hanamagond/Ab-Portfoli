@@ -19,6 +19,6 @@
             get; set;
         }
 
-        public List<string> skil { get; set; }
+        public List<string> skill { get; set; }
     }
 }
