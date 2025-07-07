@@ -44,6 +44,13 @@ using (var scope = app.Services.CreateScope())
         );
         dbContext.SaveChanges();
     }
+    if (!dbContext.Blogs.Any())
+    {
+        dbContext.Blogs.AddRange(
+            new Blog { Id = 1, title = "Portfolio Website", summary = "My personal portfolio site.", imageUrl = "/images/portfolio.png", slug = "Blog-1", author = "Abhishek Hanamagond", imageHint = "", publishedAt=DateTime.Now, skil = ["React", "NextJS", "Performance"] }
+        );
+        dbContext.SaveChanges();
+    }
 }
 
 // Configure the HTTP request pipeline.

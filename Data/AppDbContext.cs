@@ -11,5 +11,7 @@ namespace portfolio.Data
         public DbSet<Projects> Projects { get; set; }
 
         public DbSet<CaseStudy> CaseStudy { get; set; }
+
+        public DbSet<Blog> Blogs { get; set; }
     }
 }
