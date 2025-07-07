@@ -49,6 +49,7 @@ namespace portfolio.Controllers
             product.imageUrl = updatedProduct.imageUrl;
             product.imageHint = updatedProduct.imageHint;
             product.publishedAt = DateTime.UtcNow.Date;
+            product.content = updatedProduct.content;
             product.skill = updatedProduct.skill ?? new List<string>(); // Ensure Tags is not null
             product.skill.AddRange(updatedProduct.skill ?? new List<string>()); // Add new tags if any
 

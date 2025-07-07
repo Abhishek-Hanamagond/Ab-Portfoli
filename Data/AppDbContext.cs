@@ -21,6 +21,9 @@ namespace portfolio.Data
             {
                 entity.Property(b => b.publishedAt)
                     .HasColumnType("date"); // Ensures only Date part stored in PostgreSQL
+
+                entity.Property(b => b.content)
+                .HasColumnType("text"); // Large text storage
             });
         }
 

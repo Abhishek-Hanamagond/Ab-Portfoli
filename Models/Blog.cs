@@ -20,5 +20,7 @@
         }
 
         public List<string> skill { get; set; }
+
+        public string  content { get; set; }
     }
 }
