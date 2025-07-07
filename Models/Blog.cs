@@ -12,7 +12,7 @@
 
         public string? imageHint { get; set; }
 
-        public DateTime publishedAt { get; set; }
+        public DateTime? publishedAt { get; set; }
 
         public string? author
         {
