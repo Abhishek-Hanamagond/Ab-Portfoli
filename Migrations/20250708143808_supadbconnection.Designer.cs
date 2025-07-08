@@ -10,11 +10,11 @@ using portfolio.Data;
 
 #nullable disable
 
-namespace portfolio.Migrations
+namespace Portfoli.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250707173326_FixPublishedAtType")]
-    partial class FixPublishedAtType
+    [Migration("20250708143808_supadbconnection")]
+    partial class supadbconnection
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,6 +37,10 @@ namespace portfolio.Migrations
                     b.Property<string>("author")
                         .HasColumnType("text");
 
+                    b.Property<string>("content")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("imageHint")
                         .HasColumnType("text");
 
@@ -44,7 +48,7 @@ namespace portfolio.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime?>("publishedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("date");
 
                     b.PrimitiveCollection<List<string>>("skill")
                         .IsRequired()

@@ -9,7 +9,7 @@ using portfolio.Data;
 
 #nullable disable
 
-namespace portfolio.Migrations
+namespace Portfoli.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
